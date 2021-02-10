@@ -28,6 +28,6 @@ public class UserController {
     @RequestMapping("/get")
     public String get() {
         User user = (User) redisUtil.get("user");
-        return user.toString();
+        return user == null ? "null" : user.toString();
     }
 }
